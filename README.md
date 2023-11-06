@@ -7,29 +7,29 @@ main problem: We are an e-commerce brand that is working as an amazon affiliate 
 
 **Key Questions:**
 
-** What were the TOP 5 Best-selling categories last month?
-** What is the most sold product of each one of these categories?
-** What are the most sold products with the highest rating?
-** Does the discount have any impact on the sales?
-** Is it possible to predict future sales of a product based on this information?
+- What were the TOP 5 Best-selling categories last month?
+- What is the most sold product of each one of these categories?
+- What are the most sold products with the highest rating?
+- Does the discount have any impact on the sales?
+- Is it possible to predict future sales of a product based on this information?
 
 ## Dataset
 
 | Column Name   | Description                                                                 |
 | ------------- | --------------------------------------------------------------------------- |
-| title         | ID of the house                                                             |
-| imgUrl        | Date the house was sold                                                     |
-| productURL    | Number of bedrooms                                                          |
-| stars         | Number of bathrooms                                                         |
-| reviews       |      Square footage of the home                                             |
-| price       | Square footage of the lot                                                   |
-| listPrice        | Total floors in the house                                                   |
-| category_id     | House which has a view to a waterfront                                      |
-| isBestSeller           | Has been viewed                                                             |
-| boughtInLastMonth    | How good the condition is overall                                           |
-| id     | How good the condition is overall                                           |
-| category_name       | Overall grade given to the housing unit, based on King County grading system|
-| Discount percentage    | Square footage of house apart from basement                                 |
+| title         | Title of the product. (type:str)                                            |
+| imgUrl        | Url of the product image. (type:str)                                        |
+| productURL    | Url of the product. (type:str)                                              |
+| stars         | Product rating. If 0, no ratings were found. (type:float)                   |
+| reviews       |      Number of reviews. If 0, no reviews were found. (type:int)             |
+| price         | Buy now price of the product. If 0, price was unavailable. (type:float, currency: USD)  
+| listPrice     | Original price of the product before discount. If 0, no list price was found AKA, no discounts. (type:float, currency:     |
+| category_id   | Use the amazon_categories.csv to find the actual category name. (type:int)  |
+| isBestSeller  | Whether the product had the Amazon BestSeller status or not. (type:bool)    |
+| boughtInLastMonth  | Units sells last month                                         |
+| id     | id of the category. Has a foreign key relationship with "category_id" on amazon_products.csv (type:int)     |
+| category_name | id of the category. Has a foreign key relationship with "category_id" on amazon_products.csv (type:int)
+| Discount percentage    | We also calculated a discount percentage taking the price and listed price.   |
                                 
 
 ## Tools Employed
